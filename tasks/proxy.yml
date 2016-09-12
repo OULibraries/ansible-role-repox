@@ -17,5 +17,4 @@
     name: admin
     password: admin
     owner: root 
-    group: www-data 
     mode: 0640
