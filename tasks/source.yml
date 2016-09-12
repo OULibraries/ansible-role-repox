@@ -4,6 +4,7 @@
     repo: https://github.com/europeana/REPOX.git
     dest: "{{ repox_path_source }}/"
     version: "{{ repox_source_tag }}"
+    update: no
 - name: replace default repox configuration
   template:
     src: configuration.properties.j2
