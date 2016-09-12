@@ -16,5 +16,6 @@
     path: /etc/httpd/proxypass
     name: admin
     password: admin
-    owner: root 
+    owner: apache
+    group: apache 
     mode: 0640
