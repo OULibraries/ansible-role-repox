@@ -11,3 +11,11 @@
   service:
     name: httpd
     state: restarted
+- name: Add Admin User to Proxy Password File
+  htpasswd: 
+    path: /etc/httpd/proxypass
+    name: admin
+    password: admin
+    owner: root 
+    group: www-data 
+    mode: 0640
