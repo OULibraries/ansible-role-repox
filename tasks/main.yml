@@ -11,3 +11,6 @@
   sudo: yes
 - include: deploy.yml
   sudo: yes
+- include: proxy.yml
+  sudo: yes
+
