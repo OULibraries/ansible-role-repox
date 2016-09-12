@@ -1,0 +1,13 @@
+---
+- name: Copy 00repox_vhost.conf into /etc/httpd/conf.d/
+  copy:
+    src: 00repox_vhost.conf
+    dest: /etc/httpd/conf.d/00repox_vhost.conf
+    mode: 0644
+    owner: root
+    group: root
+    backup: yes
+- name: Restart httpd.service
+  service:
+    name: httpd
+    state: restarted

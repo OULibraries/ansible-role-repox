@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  sudo: yes
+  tags: deploy
+  vars_files:
+    - my-vars.yml
+  pre_tasks:
+    - name: /srv is a directory
+      file: path=/srv state=directory mode=0755 force=yes
+
+  roles:
+    - { role: OULibraries.centos7, tags: ["centos7"] }
+    - { role: OULibraries.repox, tags: ["repox"] }
+    - { role: OULibraries.postfix-mta, tags: ["postfix"] }
+    - { role: OULibraries.ngrok, tags: ["ngrok"]
+    - { role: OULibraries.users, tags: ["users"] }
