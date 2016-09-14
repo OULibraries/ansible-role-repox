@@ -1,16 +1,30 @@
 ---
 - include: yum.yml
   sudo: yes
+  tags:
+    - repox_yum
 - include: services.yml
   sudo: yes
+  tags:
+    - repox_services
 - include: database.yml
   sudo: yes
+  tags:
+    - repox_database
 - include: source.yml
   sudo: yes
+  tags:
+    - repox_source
 - include: build.yml
   sudo: yes
+  tags:
+    - repox_build
 - include: deploy.yml
   sudo: yes
+  tags:
+    - repox_deploy
 - include: proxy.yml
   sudo: yes
+  tags:
+    - repox_proxy
 
