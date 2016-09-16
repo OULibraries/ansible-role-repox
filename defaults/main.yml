@@ -20,8 +20,8 @@ repox_path_log: /var/log
 repox_path_tomcat: /usr/share/tomcat
 
 # the user that logs in to the web interface
-repox_admin_username: {{ admin_username }} # Usually 'admin'
-repox_admin_password: {{ admin_passwprd }} # Usually 'admin'
+repox_admin_username: "{{ admin_username }}" # Usually 'admin'
+repox_admin_password: "{{ admin_password }}" # Usually 'admin'
 repox_admin_email: root@localhost
 
 # what version of REPOX to check out
