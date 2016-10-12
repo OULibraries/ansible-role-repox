@@ -3,10 +3,6 @@
 # dev, test, prod, vagrant, etc.
 environment_name:
 
-# Location of apache certs
-httpd_cert_path: '/etc/pki/tls/certs/'
-httpd_key_path: '/etc/pki/tls/private/'
-
 # Used for apache Servername and cert config
 httpd_dn_prefix: repox
 httpd_dn_suffix:
