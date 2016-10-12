@@ -23,12 +23,14 @@ TODO:
 Requirements
 ------------
 
-CentOS 7x.
+* CentOS 7x
+* Apache2
 
 Role Variables
 --------------
 
 See defaults/main.yml
+Not all default variables have values, so you'll need to set those in your playbook.
 
 Dependencies
 ------------
