@@ -1,14 +1,24 @@
 ---
-# these are flat, so overriding them is easier
-# they are namespaced
+
+# dev, test, prod, vagrant, etc.
+environment_name:
+
+# Location of apache certs
+httpd_cert_path: '/etc/pki/tls/certs/'
+httpd_key_path: '/etc/pki/tls/private/'
+
+# Used for apache Servername and cert config
+httpd_dn_prefix: repox
+httpd_dn_suffix:
 
 # mariadb configuration
-#  host and port don't support configuration
+# host and port don't support configuration
 repox_mariadb_host: localhost
 repox_mariadb_port: 3306
-repox_mariadb_username: repox
-repox_mariadb_password: repox
+repox_mariadb_username:
+repox_mariadb_password:
 repox_mariadb_database: repoxdb
+
 #  I'm not sure what repox_mariadb_privileges ought to be
 repox_mariadb_privileges: ALL
 
@@ -16,12 +26,13 @@ repox_mariadb_privileges: ALL
 repox_path_source: /usr/src/repox
 repox_path_data: /data
 repox_path_log: /var/log
-#  repox_path_tomcat doesn't support configuration
+
+# repox_path_tomcat doesn't support configuration
 repox_path_tomcat: /usr/share/tomcat
 
 # the user that logs in to the web interface
-repox_admin_username: "{{ admin_username }}" # Usually 'admin'
-repox_admin_password: "{{ admin_password }}" # Usually 'admin'
+repox_admin_username:
+repox_admin_password:
 repox_admin_email: root@localhost
 
 # what version of REPOX to check out
@@ -40,8 +51,3 @@ repox_smtp_address: root@localhost
 repox_smtp_password: nope
 repox_smtp_host: localhost
 repox_smtp_port: 465
-
-httpd_cert_path: '/etc/pki/tls/certs/'
-httpd_key_path: '/etc/pki/tls/private/'
-
-environment_name: "ltpdev"
