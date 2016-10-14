@@ -1,0 +1,21 @@
+---
+- name: Ensure ssl cert directory exists
+  file: path="{{ httpd_cert_path }}/{{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}" state=directory
+- name: Ensure ssl key directory exists
+  file: path="{{ httpd_key_path }}/{{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}" state=directory
+- name: Ensure Apache is stopped
+  service:
+    name: httpd
+    state: stopped
+- name: Generate a self-signed cert.
+  sudo: yes
+  command: >
+     openssl req -newkey rsa:2048 -nodes -sha256 -x509 -subj "/CN={{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}" -days 90 -keyout "{{ httpd_key_path }}"/{{ httpd_dn_prefix }}."{{ httpd_dn_suffix }}"/privkey.pem -out "{{ httpd_cert_path }}"/{{ httpd_dn_prefix }}."{{ httpd_dn_suffix }}"/cert.pem 
+- name: Create a dummy chain file
+  sudo: yes
+  shell: >
+    echo \# > "{{ httpd_cert_path }}/{{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}/chain.pem"
+- name: Ensure Apache is restarted
+  service:
+    name: httpd
+    state: restarted
