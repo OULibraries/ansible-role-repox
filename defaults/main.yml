@@ -47,3 +47,6 @@ repox_smtp_address: root@localhost
 repox_smtp_password: nope
 repox_smtp_host: localhost
 repox_smtp_port: 465
+
+repox_java_home: /usr/lib/jvm
+repox_java_storepass: changeit
