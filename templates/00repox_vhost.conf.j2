@@ -1,11 +1,11 @@
 <VirtualHost *:443>
 
   Include /etc/httpd/conf.d/00ssl.include
-  SSLCertificateFile ${HTTPD_CERT_PATH}/${HTTPD_DN_PREFIX}.${HTTPD_DN_SUFFIX}/cert.pem
-  SSLCertificateKeyFile ${HTTPD_KEY_PATH}/${HTTPD_DN_PREFIX}.${HTTPD_DN_SUFFIX}/privkey.pem
-  SSLCertificateChainFile ${HTTPD_CERT_PATH}/${HTTPD_DN_PREFIX}.${HTTPD_DN_SUFFIX}/chain.pem
+  SSLCertificateFile ${HTTPD_CERT_PATH}/{{ httpd_dn_prefix }}.${HTTPD_DN_SUFFIX}/cert.pem
+  SSLCertificateKeyFile ${HTTPD_KEY_PATH}/{{ httpd_dn_prefix }}.${HTTPD_DN_SUFFIX}/privkey.pem
+  SSLCertificateChainFile ${HTTPD_CERT_PATH}/{{ httpd_dn_prefix }}.${HTTPD_DN_SUFFIX}/chain.pem
 
-  ServerName ${HTTPD_DN_PREFIX}.${HTTPD_DN_SUFFIX}
+  ServerName {{ httpd_dn_prefix }}.${HTTPD_DN_SUFFIX}
   DocumentRoot /dev/null
   Redirect 404 /
 

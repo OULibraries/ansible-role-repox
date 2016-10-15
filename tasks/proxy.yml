@@ -1,7 +1,7 @@
 ---
 - name: Copy 00repox_vhost.conf into /etc/httpd/conf.d/
-  copy:
-    src: 00repox_vhost.conf
+  template:
+    src: 00repox_vhost.conf.j2
     dest: /etc/httpd/conf.d/00repox_vhost.conf
     mode: 0644
     owner: root
