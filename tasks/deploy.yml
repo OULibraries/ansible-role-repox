@@ -14,5 +14,7 @@
     dest: "{{ repox_path_tomcat }}/webapps/ROOT.war"
 - name: set the SELINUX context for tomcat to use the REPOX WAR
   command: /bin/bash -c "semanage fcontext -a -t tomcat_var_lib_t {{ repox_path_tomcat }}/webapps/ROOT.war && restorecon -R {{ repox_path_tomcat }}/webapps/"
-- name: Add local cert to java keystore
-  command: keytool -import -alias localhost -file "{{ httpd_cert_path }}"/star."{{ httpd_dn_suffix }}"/cert.pem -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
+- name: Delete localhost alias in java keystore
+  command: keytool -delete -alias localhost -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
+- name: Add local cert to localhost alias in java keystore
+  command: keytool -import -alias localhost -file "{{ httpd_cert_path }}"/{{ httpd_dn_prefix }}."{{ httpd_dn_suffix }}"/cert.pem -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
