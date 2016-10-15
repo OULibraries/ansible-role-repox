@@ -22,6 +22,6 @@
 - name: Set /etc/hosts so that REPOX talks to itself over loopback.
   replace:
     dest: /etc/hosts
-    regexp: '^(127\.0\.0\.1)(.+)(?!{{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }})(.*)$'
-    replace: '\1\2\3\4 {{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }}'
+    regexp: '^((127\.0\.0\.1)(.+)(?!{{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }})(.*))$'
+    replace: '\1 {{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}'
     backup: yes
