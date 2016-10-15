@@ -17,4 +17,10 @@
 - name: Delete localhost alias in java keystore
   command: keytool -delete -alias localhost -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
 - name: Add local cert to localhost alias in java keystore
-  command: keytool -import -alias localhost -file "{{ httpd_cert_path }}"/{{ httpd_dn_prefix }}."{{ httpd_dn_suffix }}"/cert.pem -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
+  command: keytool -import -alias localhost -file "{{ httpd_cert_path }}"/"{{ httpd_dn_prefix }}"."{{ httpd_dn_suffix }}"/cert.pem -keystore "{{ repox_java_home }}"/jre/lib/security/cacerts -storepass "{{ repox_java_storepass }}" -noprompt
+- name: Set /etc/hosts so that REPOX talks to itself over loopback.
+  replace:
+    dest: /etc/hosts
+    regexp: '^(127\.0\.0\.1)(.+)(?!{{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }})(.*)$'
+    replace: '\1\2\3\4 {{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }}'
+    backup: yes
