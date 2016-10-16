@@ -1,12 +1,12 @@
 ---
 - include: yum.yml
   sudo: yes
+  tags:
+    - repox_yum
 - include: ssl-selfsign.yml
   sudo: yes
   tags:
     - repox_ssl
-  tags:
-    - repox_yum
 - include: services.yml
   sudo: yes
   tags:
