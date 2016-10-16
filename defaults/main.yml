@@ -44,9 +44,10 @@ repox_base_urn: "oai:the.european.library."
 
 # REPOX assumes a mail server, but it doesn't provide one
 repox_smtp_address: root@localhost
-repox_smtp_password: nope
+repox_smtp_password:
 repox_smtp_host: localhost
-repox_smtp_port: 465
+repox_smtp_port: 25
+repox_smtp_ssl: 'false'
 
 repox_java_home: /usr/lib/jvm
 repox_java_storepass: changeit
