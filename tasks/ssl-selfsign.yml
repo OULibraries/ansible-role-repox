@@ -15,7 +15,10 @@
   sudo: yes
   shell: >
     echo \# > "{{ httpd_cert_path }}/{{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}/chain.pem"
-- name: Ensure Apache is restarted
-  service:
-    name: httpd
-    state: restarted
+- name: Copy tomcat server.xml configured for ssl offloading.
+  copy:
+    src: server.xml
+    dest: /etc/tomcat/server.xml
+    mode: 0644
+    owner: root
+    group: tomcat

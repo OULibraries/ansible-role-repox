@@ -1,8 +1,9 @@
 ---
-- name: database and tomcat services
+- name: Restart services
   service:
     name: "{{ item }}"
     state: started
   with_items:
   - mariadb
+  - httpd
   - tomcat
