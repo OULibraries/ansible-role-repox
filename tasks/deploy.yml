@@ -6,6 +6,9 @@
   template:
     src: users.xml.j2
     dest: "{{ repox_path_data }}/repoxData/configuration/users.xml"
+    mode: 0644
+    owner: tomcat
+    group: tomcat
 - name: install the repox war into tomcat
   # https://benhutchison.wordpress.com/2008/07/30/how-to-configure-tomcat-root-context/
   copy:
