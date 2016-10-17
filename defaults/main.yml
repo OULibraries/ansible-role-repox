@@ -43,7 +43,6 @@ repox_source_tag: v3.1.0
 repox_ldap_host:
 repox_ldap_password:
 repox_ldap_root_dn:
-repox_ldap_password:
 repox_ldap_base_path:
 
 
