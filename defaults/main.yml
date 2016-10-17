@@ -40,8 +40,12 @@ repox_admin_email: root@localhost
 repox_source_tag: v3.1.0
 
 # the LDAP configuration that was in the REPOX source
-repox_ldap_host: "130.87.237.187:636"
-repox_ldap_password: pass
+repox_ldap_host:
+repox_ldap_password:
+repox_ldap_root_dn:
+repox_ldap_password:
+repox_ldap_base_path:
+
 
 # not sure where this is used, but it probably needs to be changed
 repox_base_urn: "oai:the.european.library."

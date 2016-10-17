@@ -29,10 +29,10 @@ sample.records = 1000
 baseurn = {{ repox_base_urn }}
 
 #LDAP Configuration, commas must be escaped
-ldapHost = ldaps://{{ repox_ldap_host }}
-ldapRootDN = uid=tel-ldap\,ou=users\,ou=system
+ldapHost = {{ repox_ldap_host }}
+ldapRootDN = {{ repox_ldap_root_dn }}
 ldapRootPassword = {{ repox_ldap_password }}
-ldapBasePath = ou=office\,ou=users\,ou=tel\,dc=theeuropeanlibrary\,dc=org
+ldapBasePath = {{ repox_ldap_base_path }}
 
 ##########################################################################
 ##################### ADVANCED PROPERTIES ################################
