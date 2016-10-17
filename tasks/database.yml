@@ -2,6 +2,10 @@
 - name: repox database
   mysql_db:
     name: "{{ repox_mariadb_database }}"
+    login_host: "{{ repox_mariadb_host }}"
+    login_port: "{{ repox_mariadb_port }}"
+    login_user: "{{ repox_mariadb_login_username }}"
+    login_password: "{{ repox_mariadb_login_password }}"
     state: present
 - name: repox user for database
   mysql_user:
@@ -9,4 +13,8 @@
     host: "{{ repox_mariadb_host }}"
     password: "{{ repox_mariadb_password }}"
     priv: "{{ repox_mariadb_database }}.*:{{ repox_mariadb_privileges }}"
+    login_host: "{{ repox_mariadb_host }}"
+    login_port: "{{ repox_mariadb_port }}"
+    login_user: "{{ repox_mariadb_login_username }}"
+    login_password: "{{ repox_mariadb_login_password }}"
     state: present

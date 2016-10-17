@@ -6,7 +6,6 @@
   with_items:
   - java
   - tomcat
-  - mariadb-server
   - git
   - maven
   - patch
