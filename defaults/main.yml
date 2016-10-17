@@ -26,6 +26,10 @@ repox_path_log: /var/log
 # repox_path_tomcat doesn't support configuration
 repox_path_tomcat: /usr/share/tomcat
 
+# User for the basic auth wrapper
+repox_wrapper_username:
+repox_wrapper_password:
+
 # the user that logs in to the web interface
 repox_admin_username:
 repox_admin_password:

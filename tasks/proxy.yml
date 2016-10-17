@@ -14,8 +14,8 @@
 - name: Add Admin User to Proxy Password File
   htpasswd: 
     path: /etc/httpd/proxypass
-    name: admin
-    password: admin
+    name: "{{ repox_wrapper_username }}"
+    password: "{{ repox_wrapper_password }}"
     owner: apache
     group: apache 
     mode: 0640
