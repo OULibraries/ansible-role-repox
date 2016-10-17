@@ -12,6 +12,7 @@
   - MySQL-python
   - python-devel
   - libffi-devel
+  - gcc
 - name: packages used by the python part of the repox configuration/installation
   pip:
     name: "{{ item }}"
