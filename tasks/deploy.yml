@@ -28,3 +28,9 @@
     regexp: '^((127\.0\.0\.1)(.+)(?!{{ httpd_dn_prefix }}\.{{ httpd_dn_suffix }})(.*))$'
     replace: '\1 {{ httpd_dn_prefix }}.{{ httpd_dn_suffix }}'
     backup: yes
+- name: Set SELinux exceptions for apache
+  command: "setsebool -P {{ item }} on"
+  with_items:
+  - httpd_can_connect_ldap
+  - httpd_can_network_connect
+  - httpd_can_sendmail
