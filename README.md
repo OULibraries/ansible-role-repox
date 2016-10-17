@@ -36,7 +36,7 @@ Dependencies
 ------------
 
 * [OULibraries.centos7](https://github.com/OULibraries/ansible-role-centos7 "GitHub repo")
-* [OULibraries.repox](https://github.com/OULibraries/ansible-role-repox "GitHub repo")
+* [OULibraries.apache2](https://github.com/OULibraries/ansible-role-apache2 "GitHub repo")
 * [OULibraries.postfix-mta](https://github.com/OULibraries/ansible-role-postfix-mta "GitHub repo")
 * [OULibraries.users](https://github.com/OULibraries/ansible-role-users "GitHub repo")
 
@@ -51,6 +51,8 @@ Example Playbook
     - my-vars.yml
   roles:
     - OULibraries.centos7
+    - OULibraries.apache2
+    - OULibraries.postfix-mta
     - OULibraries.repox
     - OULibraries.users
 ```
