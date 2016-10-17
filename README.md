@@ -37,6 +37,7 @@ Dependencies
 
 * [OULibraries.centos7](https://github.com/OULibraries/ansible-role-centos7 "GitHub repo")
 * [OULibraries.apache2](https://github.com/OULibraries/ansible-role-apache2 "GitHub repo")
+* [OULibraries.mariadb](https://github.com/OULibraries/ansible-role-mariadb "GitHub repo"). Optional, as you may have a remote DB server.
 * [OULibraries.postfix-mta](https://github.com/OULibraries/ansible-role-postfix-mta "GitHub repo")
 * [OULibraries.users](https://github.com/OULibraries/ansible-role-users "GitHub repo")
 
@@ -52,6 +53,7 @@ Example Playbook
   roles:
     - OULibraries.centos7
     - OULibraries.apache2
+    - OULibraries.mariadb
     - OULibraries.postfix-mta
     - OULibraries.repox
     - OULibraries.users
