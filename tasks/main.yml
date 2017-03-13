@@ -1,34 +1,34 @@
 ---
 - include: yum.yml
-  sudo: yes
+  become: true
   tags:
     - repox_yum
 - include: ssl-selfsign.yml
-  sudo: yes
+  become: true
   tags:
     - repox_ssl
 - include: services.yml
-  sudo: yes
+  become: true
   tags:
     - repox_services
 - include: database.yml
-  sudo: yes
+  become: true
   tags:
     - repox_database
 - include: source.yml
-  sudo: yes
+  become: true
   tags:
     - repox_source
 - include: build.yml
-  sudo: yes
+  become: true
   tags:
     - repox_build
 - include: deploy.yml
-  sudo: yes
+  become: true
   tags:
     - repox_deploy
 - include: proxy.yml
-  sudo: yes
+  become: true
   tags:
     - repox_proxy
 

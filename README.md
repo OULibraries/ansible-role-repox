@@ -47,7 +47,7 @@ Example Playbook
 
 ```
 - hosts: servers
-  sudo: yes
+  become: true
   vars_files:
     - my-vars.yml
   roles:
