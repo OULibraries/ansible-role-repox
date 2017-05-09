@@ -62,7 +62,7 @@ Example Playbook
 License
 -------
 
-TBD
+[MIT](https://github.com/OULibraries/ansible-role-repox/blob/master/LICENSE)
 
 Author Information
 ------------------
